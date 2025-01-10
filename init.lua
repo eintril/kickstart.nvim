@@ -406,6 +406,9 @@ require('lazy').setup({
           find_files = {
             hidden = true,
           },
+          live_grep = {
+            hidden = true,
+          },
         },
         extensions = {
           ['ui-select'] = {
