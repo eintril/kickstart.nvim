@@ -391,6 +391,8 @@ require('lazy').setup({
       -- Telescope picker. This is really useful to discover what Telescope can
       -- do as well as how to actually do it!
 
+      local actions = require 'telescope.actions'
+
       -- [[ Configure Telescope ]]
       -- See `:help telescope` and `:help telescope.setup()`
       require('telescope').setup {
@@ -398,9 +400,10 @@ require('lazy').setup({
         --  All the info you're looking for is in `:help telescope.setup()`
         --
         defaults = {
-          -- mappings = {
-          --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-          -- },
+          mappings = {
+            i = { ['<C-x>'] = false, ['<C-s>'] = actions.select_horizontal },
+            n = { ['<C-x>'] = false, ['<C-s>'] = actions.select_horizontal, ['<C-c>'] = actions.close },
+          },
           path_display = {
             'truncate',
           },
@@ -457,7 +460,7 @@ require('lazy').setup({
 
       -- Shortcut for searching your Neovim configuration files
       vim.keymap.set('n', '<leader>sn', function()
-        builtin.find_files { cwd = vim.fn.stdpath 'config' }
+        builtin.find_files { cwd = vim.fn.stdpath 'config', hidden = false }
       end, { desc = '[S]earch [N]eovim files' })
     end,
   },
