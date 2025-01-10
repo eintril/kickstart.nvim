@@ -156,6 +156,12 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Conceal text with custom replacement characters (useful for Obsidian.nvim)
+vim.opt.conceallevel = 1
+
+-- Keep whole words when breaking lines
+vim.opt.linebreak = true
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
