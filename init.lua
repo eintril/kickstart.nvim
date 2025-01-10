@@ -862,9 +862,10 @@ require('lazy').setup({
             -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
             group_index = 0,
           },
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = 'path' },
+          { name = 'nvim_lsp', group_index = 2 },
+          { name = 'path', group_index = 2 },
+          { name = 'luasnip', group_index = 2 },
+          { name = 'copilot', group_index = 2 },
         },
       }
     end,
@@ -1004,6 +1005,9 @@ require('lazy').setup({
 })
 
 require 'custom.commands.explore'
+
+-- Toggle copilot suggestions inline
+-- vim.keymap.set('n', '<Leader>cs', '<cmd>lua require("copilot.suggestion").toggle_auto_trigger()<CR>', { desc = 'Toggle copilot auto trigger' })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
