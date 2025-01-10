@@ -257,6 +257,11 @@ require('lazy').setup({
         delete = { text = '_' },
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
+        untracked = { text = '┆' },
+      },
+      current_line_blame_opts = {
+        virt_text_pos = 'right_align',
+        delay = 0,
       },
     },
   },
