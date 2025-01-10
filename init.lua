@@ -169,6 +169,9 @@ vim.opt.linebreak = true
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- Switch between current file and alternate file with <Leader><Tab>
+vim.keymap.set('n', '<Leader><Tab>', '<C-^>')
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
