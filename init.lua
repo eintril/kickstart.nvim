@@ -462,6 +462,9 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config', hidden = false }
       end, { desc = '[S]earch [N]eovim files' })
+
+      -- Shortcut to open Project View
+      vim.keymap.set('n', '<leader>pv', '<cmd>Ex<CR>')
     end,
   },
 
