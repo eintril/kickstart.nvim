@@ -1069,5 +1069,8 @@ vim.keymap.set('n', '<Leader>sp', function()
   toggle_telescope(harpoon:list())
 end, { desc = '[S]earch Har[p]oon' })
 
+-- Unindent with <S-Tab>
+vim.keymap.set('i', '<S-Tab>', '<C-d>', { desc = 'Unindent' })
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
