@@ -336,6 +336,7 @@ require('lazy').setup({
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        { '<leader>p', group = '[P]roject', mode = { 'n', 'v' } },
       },
     },
   },
@@ -464,7 +465,7 @@ require('lazy').setup({
       end, { desc = '[S]earch [N]eovim files' })
 
       -- Shortcut to open Project View
-      vim.keymap.set('n', '<leader>pv', '<cmd>Ex<CR>')
+      vim.keymap.set('n', '<leader>pv', '<cmd>Ex<CR>', { desc = '[P]roject [V]iew' })
     end,
   },
 
