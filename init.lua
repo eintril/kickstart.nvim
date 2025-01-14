@@ -403,7 +403,7 @@ require('lazy').setup({
         defaults = {
           mappings = {
             i = { ['<C-x>'] = false, ['<C-s>'] = actions.select_horizontal },
-            n = { ['<C-x>'] = false, ['<C-s>'] = actions.select_horizontal, ['<C-c>'] = actions.close },
+            n = { ['<C-x>'] = false, ['<C-s>'] = actions.select_horizontal, ['<C-c>'] = actions.close, ['q'] = actions.close },
           },
           path_display = {
             'truncate',
