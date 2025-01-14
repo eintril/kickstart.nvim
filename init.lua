@@ -960,6 +960,7 @@ require('lazy').setup({
         keymaps = {
           node_incremental = 'v',
           node_decremental = 'V',
+          scope_incremental = '<CR>',
         },
       },
     },
