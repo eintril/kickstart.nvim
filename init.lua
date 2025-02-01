@@ -714,6 +714,20 @@ require('lazy').setup({
       }
 
       require('lspconfig').ruff.setup {}
+
+      require('lspconfig').pyright.setup {
+        settings = {
+          python = {
+            analysis = {
+              typeCheckingMode = 'basic',
+              autoSearchPaths = true,
+              useLibraryCodeForTypes = true,
+            },
+            pythonPath = './env/bin/python',
+            venvPath = './',
+          },
+        },
+      }
     end,
   },
 
