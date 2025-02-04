@@ -1099,7 +1099,22 @@ vim.keymap.set('i', '<S-Tab>', '<C-d>', { desc = 'Unindent' })
 
 -- Set title
 vim.opt.title = true
-vim.opt.titlestring = "%{fnamemodify(getcwd(), ':t')} — %t"
+vim.o.titlestring = "%{fnamemodify(getcwd(), ':t')} — %{v:lua.GetTitleStringEnd()}"
+
+function _G.GetTitleStringEnd()
+  if vim.bo.filetype == 'oil' then
+    local oil_path = vim.fn.expand '%:p'
+    local path_without_oil_prefix = oil_path:sub(7) -- Strip "oil://"
+    local current_dir = vim.fn.fnamemodify(path_without_oil_prefix, ':t')
+    if current_dir == '' then
+      return path_without_oil_prefix:match '.*/(.*)/'
+    else
+      return current_dir
+    end
+  else
+    return vim.fn.expand '%:t'
+  end
+end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
